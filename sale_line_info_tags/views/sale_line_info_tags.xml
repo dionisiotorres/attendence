@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="sale_line_info_tags_search_view" model="ir.ui.view">
+        <field name="name">Sale Line Info Tags Seacrh</field>
+        <field name="model">sale.line.info.tags</field>
+        <field name="arch" type="xml">
+            <search string="Tags">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="sale_line_info_tags_form_view" model="ir.ui.view">
+        <field name="name">Sale Line Info Tags Form</field>
+        <field name="model">sale.line.info.tags</field>
+        <field name="arch" type="xml">
+            <form string="Task Tags">
+                <group>
+                    <field name="name"/>
+                    <field name="color"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="sale_line_info_tags_action" model="ir.actions.act_window">
+        <field name="name">Sale Line Info Tags</field>
+        <field name="res_model">sale.line.info.tags</field>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to add a new sale order line tag.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="sale_line_info_tags_menu"
+              name="Tags in sale order line"
+              parent="sale.menu_sale_config"
+              action="sale_line_info_tags_action"
+              sequence="19"/>
+</odoo>
