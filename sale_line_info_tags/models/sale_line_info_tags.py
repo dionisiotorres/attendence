@@ -6,7 +6,7 @@ from odoo import fields, models,  _
 
 class SaleLineInfoTags(models.Model):
     _name = "sale.line.info.tags"
-    _description = "Tags for sale order line"
+    _description = "Tags in sale order line"
 
     name = fields.Char(required=True)
     color = fields.Integer(string='Color Index', default=10)

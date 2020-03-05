@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <odoo>
     <record id="sale_line_info_tags_search_view" model="ir.ui.view">
-        <field name="name">Sale Line Info Tags Seacrh</field>
+        <field name="name">sale.line.info.tags Seacrh</field>
         <field name="model">sale.line.info.tags</field>
         <field name="arch" type="xml">
             <search string="Tags">
@@ -11,10 +11,10 @@
     </record>
 
     <record id="sale_line_info_tags_form_view" model="ir.ui.view">
-        <field name="name">Sale Line Info Tags Form</field>
+        <field name="name">Ssale.line.info.tags Form</field>
         <field name="model">sale.line.info.tags</field>
         <field name="arch" type="xml">
-            <form string="Task Tags">
+            <form string="Sale Line Tags">
                 <group>
                     <field name="name"/>
                     <field name="color"/>
@@ -24,7 +24,7 @@
     </record>
 
     <record id="sale_line_info_tags_action" model="ir.actions.act_window">
-        <field name="name">Sale Line Info Tags</field>
+        <field name="name">sale.line.info.tags Action</field>
         <field name="res_model">sale.line.info.tags</field>
         <field name="view_type">form</field>
         <field name="help" type="html">
