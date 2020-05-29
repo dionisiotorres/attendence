@@ -1,0 +1,79 @@
+.head_table {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 0.7rem;
+}
+
+.cell_right {
+    text-align: right;
+}
+
+.totals_table {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+.totals_move {
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+.move_text {
+    font-size: 0.8rem;
+}
+
+.cell_text {
+    font-size: 0.7rem;
+}
+
+.cell_10 {
+    width: 10%;
+}
+
+.cell_15 {
+    width: 15%;
+}
+
+.cell_20 {
+    width: 20%;
+}
+
+.cell_30 {
+    width: 30%;
+}
+
+.cell_40 {
+    width: 40%;
+}
+
+.cell_45 {
+    width: 45%;
+}
+
+.cell_50 {
+    width: 50%;
+}
+
+.cell_55 {
+    width: 55%;
+}
+
+.cell_60 {
+    width: 60%;
+}
+
+.setWidth {
+    max-width: 100px;
+}
+.concat div {
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: inherit;
+}

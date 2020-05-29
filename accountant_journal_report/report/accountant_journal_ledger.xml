@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report
+      id="action_report_accountant_journal_ledger_html"
+      model="report.accountant_journal_report.accountant_journal_ledger_report"
+      string="Accountant Journal Ledger HTML"
+      report_type="qweb-html"
+      paperformat="account_financial_report.report_qweb_paperformat"
+      name="accountant_journal_report.accountant_journal_report"
+      file="accountant_journal_report.accountant_journal_report_html"
+      />
+    <report
+      id="action_report_accountant_journal_ledger_qweb"
+      model="report.accountant_journal_report.accountant_journal_ledger_report"
+      string="Accountant Journal Ledger PDF"
+      report_type="qweb-pdf"
+      name="accountant_journal_report.accountant_journal_report"
+      file="accountant_journal_report.accountant_journal_report"
+      />
+
+     <template id="accountant_journal_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="accountant_journal_report.internal_layout">
+                    <t t-call="accountant_journal_report.report_accountant_journal_base"/>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+    <template id="report_accountant_journal_base">
+        <t t-set="display_account_name" t-value="o.with_account_name"/>
+        <div class="page">
+            <div t-if="report_type == 'html'">
+                <div class="row">
+                    <div class="col-6">
+                        <h4 t-field="o.journal_id.name"/>
+                    </div>
+                    <div class="col-6 text-right">
+                        <h4 t-field="o.company_id.name"/>
+                    </div>
+                </div>
+            </div>
+
+            <div style="width: 100%;">
+                Moves: <span t-field="o.date_from"/> to <span t-field="o.date_to"/>
+            </div>
+            <t t-if="o.journal_id.type == 'sale'">
+                <t t-call="accountant_journal_report.report_accountant_journal_sale"/>
+            </t>
+            <t t-if="o.journal_id.type == 'purchase'">
+                <t t-call="accountant_journal_report.report_accountant_journal_sale"/>
+            </t>
+            <t t-if="o.journal_id.type in ('cash', 'bank', 'general')">
+                <t t-call="accountant_journal_report.report_accountant_journal_liquidity"/>
+            </t>
+        </div>
+    </template>
+
+    <template id="report_accountant_journal_sale">
+        <t t-if="display_account_name">
+            <t t-set="account_column_class">cell_20</t>
+            <t t-set="label_column_class">cell_45</t>
+        </t>
+        <t t-else="">
+            <t t-set="account_column_class">cell_10</t>
+            <t t-set="label_column_class">cell_55</t>
+        </t>
+        <div class="row" style="max-width: 100%">
+            <table class="table table-bordered table-sm mt0">
+                <thead>
+                    <tr class="head_table">
+                        <th t-att-class="account_column_class">Account</th>
+                        <th t-att-class="label_column_class">Desc - Label</th>
+                        <th class="cell_15">Taxes</th>
+                        <th class="cell_10">Debit</th>
+                        <th class="cell_10">Credit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="3"/>
+                        <td class="totals_table"><t t-esc="totals.get('sum_tot_debit')" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></td>
+                        <td class="totals_table"><t t-esc="totals['sum_tot_credit']" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></td>
+                    </tr>
+                    <t t-foreach="moves" t-as="move">
+                        <tr style="background-color:#F0F0F0;">
+                            <td colspan="3" class="move_text">
+                                <span t-field="move.date"/> - <span t-field="move.ref"/> - <span t-field="move.partner_id.name"/> (<span t-field="move.partner_id.vat"/>)
+                            </td>
+                            <td class="totals_move">
+                                <span t-esc="totals[move.id]['sum_move_credit']" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                            </td>
+                            <td class="totals_move">
+                                <span t-esc="totals[move.id]['sum_move_credit']" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                            </td>
+                        </tr>
+                        <t t-foreach="move.line_ids" t-as="move_line">
+                            <tr class="cell_text">
+                                <td>
+                                    <span t-field="move_line.account_id.code"/>
+                                    <span t-if="display_account_name">
+                                        - <span t-field="move_line.account_id.name"/>
+                                    </span>
+                                </td>
+                                <td class="setWidth concat">
+                                    <div><span t-field="move_line.name"/></div>
+                                </td>
+                                <td>
+                                    <span t-if="move_line.tax_line_id" t-field="move_line.tax_line_id.description" style="color:red;"/>
+                                    <t t-if="move_line.tax_ids" t-foreach="move_line.tax_ids" t-as="taxes">
+                                        <span t-field="taxes.description"/>,
+                                    </t>
+                                </td>
+                                <td class="cell_right">
+                                    <span t-field="move_line.debit"/>
+                                </td>
+                                <td class="cell_right">
+                                    <span t-field="move_line.credit"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </t>
+                </tbody>
+            </table>
+        </div>
+    </template>
+
+    <template id="report_accountant_journal_liquidity">
+        <t t-if="display_account_name">
+            <t t-set="account_column_class">cell_20</t>
+            <t t-set="label_column_class">cell_30</t>
+        </t>
+        <t t-else="">
+            <t t-set="account_column_class">cell_10</t>
+            <t t-set="label_column_class">cell_40</t>
+        </t>
+        <div class="row" style="max-width: 100%">
+            <table class="table table-bordered table-sm mt0">
+                <thead>
+                    <tr class="head_table">
+                        <th t-att-class="account_column_class">Account</th>
+                        <th t-att-class="partner_column_class">Partner</th>
+                        <th  class="cell_20">Desc - Label</th>
+                        <th class="cell_10">Debit</th>
+                        <th class="cell_10">Credit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="3"/>
+                        <td class="totals_table"><t t-esc="totals.get('sum_tot_debit')" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></td>
+                        <td class="totals_table"><t t-esc="totals['sum_tot_credit']" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/></td>
+                    </tr>
+                    <t t-foreach="moves" t-as="move">
+                        <tr style="background-color:#F0F0F0;">
+                            <td colspan="3" class="move_text">
+                                <span t-field="move.date"/> - <span t-field="move.name"/> - <span t-field="move.ref"/>
+                            </td>
+                            <td class="totals_move">
+                                <span t-esc="totals[move.id]['sum_move_credit']" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                            </td>
+                            <td class="totals_move">
+                                <span t-esc="totals[move.id]['sum_move_credit']" t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                            </td>
+                        </tr>
+                        <t t-foreach="move.line_ids" t-as="move_line">
+                            <tr class="cell_text">
+                                <td>
+                                    <span t-field="move_line.account_id.code"/>
+                                    <span t-if="display_account_name">
+                                        - <span t-field="move_line.account_id.name"/>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span t-field="move_line.partner_id.name"/>
+                                </td>
+                                <td>
+                                    <t t-if="move_line.full_reconcile_id">
+                                        <span t-field="move_line.full_reconcile_id.reconciled_line_ids[1].ref"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-field="move_line.name"/>
+                                    </t>
+                                </td>
+                                <td class="cell_right">
+                                    <span t-field="move_line.debit"/>
+                                </td>
+                                <td class="cell_right">
+                                    <span t-field="move_line.credit"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </t>
+                </tbody>
+            </table>
+        </div>
+    </template>
+</odoo>

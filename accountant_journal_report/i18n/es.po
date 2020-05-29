@@ -1,0 +1,263 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* accountant_journal_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-29 10:21+0000\n"
+"PO-Revision-Date: 2020-05-29 10:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_liquidity
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_sale
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: accountant_journal_report
+#: model:ir.actions.act_window,name:accountant_journal_report.action_accountant_journal_ledger_wizard
+#: model:ir.ui.menu,name:accountant_journal_report.menu_accountant_journal_ledger_wizard
+msgid "Accountant Journal Ledger"
+msgstr "Libro Diario (Asesor)"
+
+#. module: accountant_journal_report
+#: model:ir.actions.report,name:accountant_journal_report.action_report_accountant_journal_ledger_html
+msgid "Accountant Journal Ledger HTML"
+msgstr "Libro Diario Asesor HTML"
+
+#. module: accountant_journal_report
+#: model:ir.actions.report,name:accountant_journal_report.action_report_accountant_journal_ledger_qweb
+msgid "Accountant Journal Ledger PDF"
+msgstr "Libro Diario Asesor PDF"
+
+#. module: accountant_journal_report
+#: model:ir.model,name:accountant_journal_report.model_report_accountant_journal_report_accountant_journal_report
+msgid "Accountant Journal Ledger Report"
+msgstr "Libro Diario Asesor Informe"
+
+#. module: accountant_journal_report
+#: code:addons/accountant_journal_report/wizard/accountant_journal_ledger_wizard.py:57
+#, python-format
+msgid "All"
+msgstr "Todos"
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.accountant_journal_ledger_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_liquidity
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_sale
+msgid "Credit"
+msgstr "Haber"
+
+#. module: accountant_journal_report
+#: code:addons/accountant_journal_report/wizard/accountant_journal_ledger_wizard.py:66
+#, python-format
+msgid "Date"
+msgstr "Fecha"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard__date_range_id
+msgid "Date range"
+msgstr "Periodo"
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_liquidity
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_sale
+msgid "Debit"
+msgstr "Debe"
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_liquidity
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_sale
+msgid "Desc - Label"
+msgstr "Desc - Etiqueta"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard__display_name
+#: model:ir.model.fields,field_description:accountant_journal_report.field_report_accountant_journal_report_accountant_journal_report__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard__date_to
+msgid "End date"
+msgstr "Fecha final"
+
+#. module: accountant_journal_report
+#: code:addons/accountant_journal_report/wizard/accountant_journal_ledger_wizard.py:65
+#, python-format
+msgid "Entry number"
+msgstr "Numero Asiento"
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.accountant_journal_ledger_wizard
+msgid "Export PDF"
+msgstr "Exportar a PDF"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard__id
+#: model:ir.model.fields,field_description:accountant_journal_report.field_report_accountant_journal_report_accountant_journal_report__id
+msgid "ID"
+msgstr ""
+
+#. module: accountant_journal_report
+#: model:ir.model,name:accountant_journal_report.model_accountant_journal_ledger_report_wizard
+msgid "Journal Ledger Report Wizard"
+msgstr "Asistente de informe de Libro Diario"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard__journal_id
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.accountant_journal_ledger_wizard
+msgid "Journals"
+msgstr "Diarios"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard____last_update
+#: model:ir.model.fields,field_description:accountant_journal_report.field_report_accountant_journal_report_accountant_journal_report____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard__move_target
+msgid "Move Target"
+msgstr "Asiento Objetivo"
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_base
+msgid "Moves:"
+msgstr "Movimientos:"
+
+#. module: accountant_journal_report
+#: code:addons/accountant_journal_report/wizard/accountant_journal_ledger_wizard.py:59
+#, python-format
+msgid "Not Posted"
+msgstr "Sin Asentar"
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.accountant_journal_ledger_wizard
+msgid "Options"
+msgstr "Opciones"
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.internal_layout
+msgid "Pagina: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr ""
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_liquidity
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.accountant_journal_ledger_wizard
+msgid "Periods"
+msgstr "Periodos"
+
+#. module: accountant_journal_report
+#: code:addons/accountant_journal_report/wizard/accountant_journal_ledger_wizard.py:58
+#, python-format
+msgid "Posted"
+msgstr "Asentado"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard__sort_option
+msgid "Sort entries by"
+msgstr "Ordenar asientos por"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard__date_from
+msgid "Start date"
+msgstr "Fecha de inicio"
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_sale
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.accountant_journal_ledger_wizard
+msgid "View"
+msgstr "Ver"
+
+#. module: accountant_journal_report
+#: model:ir.model.fields,field_description:accountant_journal_report.field_accountant_journal_ledger_report_wizard__with_account_name
+msgid "With Account Name"
+msgstr "Cuenta con Nombre"
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_liquidity
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_sale
+msgid "cell_10"
+msgstr ""
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_liquidity
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_sale
+msgid "cell_20"
+msgstr ""
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_liquidity
+msgid "cell_30"
+msgstr ""
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_liquidity
+msgid "cell_40"
+msgstr ""
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_sale
+msgid "cell_45"
+msgstr ""
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_sale
+msgid "cell_55"
+msgstr ""
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.accountant_journal_ledger_wizard
+msgid "or"
+msgstr "o"
+
+#. module: accountant_journal_report
+#: model_terms:ir.ui.view,arch_db:accountant_journal_report.report_accountant_journal_base
+msgid "to"
+msgstr "a"
+
